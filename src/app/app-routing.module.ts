@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthorizatedGuard] },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'bandas', component: BandaComponent , canActivate:[AuthorizatedGuard] },
-  { path: 'detail/:Nombre', component: BandaDetailComponent, canActivate:[AuthorizatedGuard]  },
+  { path: 'detailBanda/:Nombre', component: BandaDetailComponent, canActivate:[AuthorizatedGuard]  },
   { path: 'login', component: LoginComponent },
 ];
 @NgModule({
