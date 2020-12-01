@@ -1,0 +1,25 @@
+<!-- <div *ngIf="banda.Resenias.length > 0">
+    <div>Reseñas</div>
+    <div *ngFor="let resenia of banda.Resenias">
+      Puntuación: {{resenia.Puntuacion}} - Comentario: {{resenia.Comentario}} - Usuario: {{resenia.Usuario.UserName}}
+    </div>
+  </div> -->
+  <div *ngIf="banda.Resenias.length > 0">
+    <div>Reseñas</div>
+    <table>
+        <th>Puntuación</th>
+        <th>Comentario</th>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <tr *ngFor="let resenia of banda.Resenias">
+            <td *ngIf="resenia.Puntuacion == 1">★</td>
+            <td *ngIf="resenia.Puntuacion == 2">★★</td>
+            <td *ngIf="resenia.Puntuacion == 3">★★★</td>
+            <td *ngIf="resenia.Puntuacion == 4">★★★★</td>
+            <td *ngIf="resenia.Puntuacion == 5">★★★★★</td>
+            <td>{{resenia.Comentario}}</td>
+            <td>{{resenia.Usuario.UserName}}</td>
+            <td>{{resenia.Fecha}}</td>
+        </tr>
+    </table>
+</div>

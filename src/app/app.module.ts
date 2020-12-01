@@ -21,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorizatedGuard } from './guards/auth-guard.service';
 import { IntegranteComponent } from './integrante/integrante.component';
+import { ReseniaBandaComponent } from './resenia-banda/resenia-banda.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { IntegranteComponent } from './integrante/integrante.component';
     MessagesComponent,
     DashboardComponent,
     LoginComponent,
-    IntegranteComponent
+    IntegranteComponent,
+    ReseniaBandaComponent
   ],
   imports: [
     BrowserModule,
