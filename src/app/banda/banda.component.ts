@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Banda } from '../ValueObjects/banda';
 import { BandaService } from '../services/banda.service';
 import { MessageService } from '../services/message.service';
+import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 
 @Component({
   selector: 'app-banda',
@@ -14,10 +15,20 @@ export class BandaComponent implements OnInit {
   constructor(private bandaService: BandaService) { }
 
   getBandas(): void {
-    this.bandaService.getBandas().subscribe(bandas => this.bandas = bandas);
+    this.bandaService.getBandas().subscribe(data => { this.checkBandas(data) }, error => { console.log(error) });
   }
 
   ngOnInit(): void {
     this.getBandas();
+  }
+
+  private checkBandas(data: ResultadoOperacion) {
+    if (!data.Error) {
+      this.bandas = data.Objeto as Banda[];
+    }
+    else {
+      console.log(data.Mensaje);
+    }
+
   }
 }

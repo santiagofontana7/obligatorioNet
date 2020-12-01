@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from "rxjs";
 import { LoginObject } from "../ValueObjects/login";
 import { Usuario } from '../ValueObjects/usuario';
+import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,8 @@ export class LoginService {
 
   private loginUrl = 'https://localhost:44323/api/Usuario/Login/';
 
-  login(loginObj: LoginObject): Observable<Usuario> {
-    console.log(loginObj);
-    return this.http.post<Usuario>(this.loginUrl, loginObj);
+  login(loginObj: LoginObject): Observable<ResultadoOperacion> {
+    return this.http.post<ResultadoOperacion>(this.loginUrl, loginObj);
   }
 
 
