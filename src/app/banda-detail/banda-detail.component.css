@@ -28,3 +28,8 @@ label {
     color: #ccc;
     cursor: auto;
   }
+  .fake-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
