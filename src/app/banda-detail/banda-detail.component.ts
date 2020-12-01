@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {BandaService} from '../services/banda.service';
-
 import { Banda } from '../ValueObjects/banda';
 import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 

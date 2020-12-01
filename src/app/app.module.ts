@@ -22,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorizatedGuard } from './guards/auth-guard.service';
 import { IntegranteComponent } from './integrante/integrante.component';
 import { ReseniaBandaComponent } from './resenia-banda/resenia-banda.component';
+import { AlbumComponent } from './album/album.component';
+import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ReseniaBandaComponent } from './resenia-banda/resenia-banda.component';
     DashboardComponent,
     LoginComponent,
     IntegranteComponent,
-    ReseniaBandaComponent
+    ReseniaBandaComponent,
+    AlbumComponent,
+    AlbumDetailComponent
   ],
   imports: [
     BrowserModule,

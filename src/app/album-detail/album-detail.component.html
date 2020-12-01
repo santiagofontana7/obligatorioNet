@@ -1,0 +1,16 @@
+<div *ngIf="album">
+    <h2>{{album.Nombre}} Detalle</h2>
+    <!-- <div><span>Id: </span>{{banda.Id}}</div> -->
+    <div><span>Nombre: </span>{{album.Nombre}}</div>
+    <div><span>Genero: </span>{{album.Genero.Descripcion}}</div>
+    <div><span>Año creación: </span>{{album.AnioCreacion}}</div>    
+    <br />
+    <div *ngIf="album.Canciones.length > 0">
+      <div>Canciones</div>
+      <div *ngFor="let cancion of album.Canciones">
+        Nombre: {{cancion.Nombre}} {{cancion.duracion}}
+      </div>
+    </div>
+    <br />    
+    <button (click)="goBack()">Atras</button>
+  </div>
