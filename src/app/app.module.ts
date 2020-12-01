@@ -21,7 +21,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorizatedGuard } from './guards/auth-guard.service';
 import { IntegranteComponent } from './integrante/integrante.component';
-import { ReseniaBandaComponent } from './resenia-banda/resenia-banda.component';
+
 import { AlbumComponent } from './album/album.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 
@@ -34,7 +34,7 @@ import { AlbumDetailComponent } from './album-detail/album-detail.component';
     DashboardComponent,
     LoginComponent,
     IntegranteComponent,
-    ReseniaBandaComponent,
+    
     AlbumComponent,
     AlbumDetailComponent
   ],
