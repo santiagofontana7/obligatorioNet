@@ -8,7 +8,7 @@ import { StorageService } from './services/storage.service';
 })
 export class AppComponent {
   constructor(
-    private storageService: StorageService
+    public storageService: StorageService
   ) { }
 
   public logout(): void{
