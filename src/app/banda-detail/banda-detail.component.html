@@ -14,7 +14,44 @@
     </div>
   </div>
   <br />
-  <app-resenia-banda [banda]="banda"></app-resenia-banda>
+  <div>Reseñas</div>
+  <div>
+    <div><label>Comentario:</label></div>
+    <div><textarea #reseniaComentario rows="5"></textarea></div>
+    <label>Puntuación:
+      <select #reseniaPuntuacion>
+        <option value="0">-</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <br/>
+    <button (click)="add(reseniaComentario.value, reseniaPuntuacion.value);">
+      Añadir
+    </button>
+  </div>
+  <div *ngIf="banda.Resenias.length > 0">
+    <table>
+      <th>Puntuación</th>
+      <th>Comentario</th>
+      <th>Usuario</th>
+      <th>Fecha</th>
+      <tr *ngFor="let resenia of banda.Resenias">
+        <td *ngIf="resenia.Puntuacion == 1">★</td>
+        <td *ngIf="resenia.Puntuacion == 2">★★</td>
+        <td *ngIf="resenia.Puntuacion == 3">★★★</td>
+        <td *ngIf="resenia.Puntuacion == 4">★★★★</td>
+        <td *ngIf="resenia.Puntuacion == 5">★★★★★</td>
+        <td>{{resenia.Comentario}}</td>
+        <td>{{resenia.Usuario.UserName}}</td>
+        <td>{{resenia.Fecha}}</td>
+        <td><span class="fake-link" *ngIf="storageService.getCurrentUser().Id == resenia.Usuario.Id" (click)="delete(resenia.Id)">Eliminar</span></td>
+      </tr>
+    </table>
+  </div>
 
   <button (click)="goBack()">Atras</button>
 </div>
