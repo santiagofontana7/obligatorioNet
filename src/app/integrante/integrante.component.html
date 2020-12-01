@@ -1,6 +1,17 @@
 <h2>Integrantes</h2>
 <ul class="integrantes">
-    <li *ngFor="let integrante of integrantes">
-        <span class="badge">ID: {{integrante.Id}} </span> Nombre: {{integrante.Nombre}} {{integrante.Apellido}} Fecha de Nacimiento: {{integrante.Fecha}}
-    </li>
+    
+
+
+    <table>
+        <tr> <th> Id </th> <th> Nombre </th> <th> Fecha Nacimiento </th> <th>Foto</th></tr>
+        
+        <tr *ngFor="let integrante of integrantes">
+          <td>{{ integrante.Id }}</td>
+          <td>{{ integrante.Nombre }} {{integrante.Apellido}}</td>
+          <td>{{ integrante.FechaNacimiento }}</td>
+          <td>{{ integrante.Foto }}</td>
+        </tr>
+      </table>
+
 </ul>
