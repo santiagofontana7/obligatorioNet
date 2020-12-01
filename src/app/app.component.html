@@ -1,9 +1,11 @@
 <h1>{{title}}</h1>
-<nav class="ng-tns-c0-0">
-  <a class="ng-tns-c0-0" routerLink="/dashboard">Principal</a>
-  <a class="ng-tns-c0-0" routerLink="/bandas">Bandas</a>
-  <a class="ng-tns-c0-0" routerLink="/integrantes">Integrantes</a>
-</nav>
-<button md-raised-button type="button" style="text-align: right;" (click)="logout()">Cerrar Sesión</button>
+<div *ngIf="storageService.isAuthenticated()">
+  <nav class="ng-tns-c0-0">
+    <a class="ng-tns-c0-0" routerLink="/dashboard">Principal</a>
+    <a class="ng-tns-c0-0" routerLink="/bandas">Bandas</a>
+    <a class="ng-tns-c0-0" routerLink="/integrantes">Integrantes</a>
+  </nav>
+  <button md-raised-button type="button" style="text-align: right;" (click)="logout()">Cerrar Sesión</button>
+</div>
 <router-outlet></router-outlet>
 <!-- <app-messages></app-messages> -->
