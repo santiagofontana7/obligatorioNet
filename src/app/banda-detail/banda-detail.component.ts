@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import {BandaService} from '../services/banda.service';
 
 import { Banda } from '../ValueObjects/banda';
+import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 
 @Component({
   selector: 'app-banda-detail',
@@ -22,17 +23,18 @@ export class BandaDetailComponent implements OnInit {
 
   getBanda(): void{
     const nombre = this.route.snapshot.paramMap.get('Nombre');
-    var bandas = this.bandaService.getBanda(nombre);
-    if(bandas)
-    {
-      bandas.subscribe(banda => this.banda = banda);
-    }
-    else
-    console.log("nadaaa");//ACA REDIRECT
+    this.bandaService.getBanda(nombre).subscribe(data => { this.checkBanda(data) }, error => { console.log(error) });
   }
 
-  goBack(): void {
-    this.location.back();
+  private checkBanda(data: ResultadoOperacion): void {
+    if(!data.Error)
+    {
+      this.banda = data.Objeto as Banda;
+    }
+    else
+    {
+      this.location.back();
+    }
   }
 
   @Input() banda: Banda;

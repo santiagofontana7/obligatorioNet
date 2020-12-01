@@ -4,6 +4,7 @@ import { BandaService } from '../services/banda.service';
 import { Usuario } from '../ValueObjects/usuario';
 import { StorageService } from '../services/storage.service';
 import { LoginService } from "../services/login.service";
+import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 
 
 @Component({
@@ -27,7 +28,18 @@ export class DashboardComponent implements OnInit {
   }
 
   getBandas(): void {
-    this.bandaService.getBandas().subscribe(bandas => this.bandas = bandas/*.slice(1, 5)*/);
+    this.bandaService.getBandas().subscribe(data => { this.checkBandas(data) }, error => { console.log(error) });
+
+  }
+
+  private checkBandas(data: ResultadoOperacion) {
+    if (!data.Error) {
+      this.bandas = data.Objeto as Banda[];
+    }
+    else {
+      console.log(data.Mensaje);
+    }
+
   }
 
 }
