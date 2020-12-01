@@ -6,20 +6,21 @@
   <div><span>Genero: </span>{{banda.Genero.Descripcion}}</div>
   <div><span>Año creación: </span>{{banda.AnioCreacion}}</div>
   <div *ngIf="banda.AnioSeparacion > 0"><span>Anio separación: </span>{{banda.AnioSeparacion}}</div>
-  <br/>
+  <br />
   <div *ngIf="banda.Integrantes.length > 0">
     <div>Integrantes</div>
     <div *ngFor="let integrante of banda.Integrantes">
       Nombre: {{integrante.Nombre}} {{integrante.Apellido}}
     </div>
   </div>
-  <br/>
-  <div *ngIf="banda.Resenias.length > 0">
+  <br />
+  <!-- <div *ngIf="banda.Resenias.length > 0">
     <div>Reseñas</div>
     <div *ngFor="let resenia of banda.Resenias">
       Puntuación: {{resenia.Puntuacion}} - Comentario: {{resenia.Comentario}} - Usuario: {{resenia.Usuario.UserName}}
     </div>
-  </div>
+  </div> -->
+  <app-resenia-banda [banda]="banda"></app-resenia-banda>
 
   <button (click)="goBack()">Atras</button>
 </div>

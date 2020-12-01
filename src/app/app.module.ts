@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component'; // <-- NgModel lives h
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthorizatedGuard } from './guards/auth-guard.service';
+import { ReseniaBandaComponent } from './resenia-banda/resenia-banda.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthorizatedGuard } from './guards/auth-guard.service';
     BandaDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    ReseniaBandaComponent
   ],
   imports: [
     BrowserModule,
