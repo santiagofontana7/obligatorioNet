@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'bandas', component: BandaComponent , canActivate:[AuthorizatedGuard] },
   { path: 'detailBanda/:Nombre', component: BandaDetailComponent, canActivate:[AuthorizatedGuard]  },
   { path: 'login', component: LoginComponent },
-  { path: 'integrante', component: IntegranteComponent , canActivate:[AuthorizatedGuard] },
+  { path: 'integrantes', component: IntegranteComponent , canActivate:[AuthorizatedGuard] },
 
   
 ];

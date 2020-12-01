@@ -18,6 +18,7 @@ export class IntegranteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getIntegrantes();
   }
 
 }
