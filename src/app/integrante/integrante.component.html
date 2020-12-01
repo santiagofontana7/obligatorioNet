@@ -10,7 +10,7 @@
           <td>{{ integrante.Id }}</td>
           <td>{{ integrante.Nombre }} {{integrante.Apellido}}</td>
           <td>{{ integrante.FechaNacimiento }}</td>
-          <td>{{ integrante.Foto }}</td>
+          <td> <img ng-src="data:image/JPEG;base64,{{ integrante.Foto }}"></td>
         </tr>
       </table>
 
