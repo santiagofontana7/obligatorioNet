@@ -6,11 +6,11 @@
       <br>
       <mat-card-content>
         <form id="login-form" #lForm="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate style="text-align: center">
-          <mat-input-container style="width: 100%; margin-bottom: 10px;" [ngClass]="{'mat-input-invalid': submitted && error?.code == 1}">
+          <mat-input-container style="width: 100%; margin-bottom: 10px;" [ngClass]="{'mat-input-invalid': submitted}">
             <input matInput type="text" formControlName="UserName" placeholder="Username"/>
             </mat-input-container>
           <br>          
-          <mat-input-container style="width: 100%; margin-bottom: 10px;" [ngClass]="{'mat-input-invalid': submitted && error?.code == 2}">
+          <mat-input-container style="width: 100%; margin-bottom: 10px;" [ngClass]="{'mat-input-invalid': submitted}">
             <input matInput type="password" formControlName="Password" placeholder="Password"/>
             </mat-input-container>
         </form>

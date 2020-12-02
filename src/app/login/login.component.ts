@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
   public submitted: Boolean = false;
-  private mensajeError: string;
-
+  public mensajeError: string;
+  
   constructor(private formBuilder: FormBuilder,
     private loginService: LoginService,
     private storageService: StorageService,
