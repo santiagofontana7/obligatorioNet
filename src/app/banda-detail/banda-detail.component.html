@@ -1,25 +1,56 @@
 <div *ngIf="banda">
-
-  <h2>{{banda.Nombre}} Detalle</h2>
+<br>
+  <h1>{{banda.Nombre}}</h1>
   <!-- <div><span>Id: </span>{{banda.Id}}</div> -->
-  <div><span>Nombre: </span>{{banda.Nombre}}</div>
-  <div><span>Genero: </span>{{banda.Genero.Descripcion}}</div>
-  <div><span>Año creación: </span>{{banda.AnioCreacion}}</div>
-  <div *ngIf="banda.AnioSeparacion > 0"><span>Anio separación: </span>{{banda.AnioSeparacion}}</div>
-  <br />
+  <!-- <div style="font-size: 20px;"><span>Nombre: </span>{{banda.Nombre}}</div> -->
+
+  <table id=banda>
+    <tr>
+      <th style="width: 20%;">Genero:</th>
+      <td>{{banda.Genero.Descripcion}}</td>
+    </tr>
+    <tr>
+      <th style="width: 20%;">Año Creacion:</th>
+      <td>{{banda.AnioCreacion}}</td>
+    </tr> 
+    <!-- <div *ngIf="banda.AnioSeparacion > 0"> -->
+      <tr *ngIf="banda.AnioSeparacion > 0">
+        <th style="width: 20%;">Año Separacion:</th>
+        <td>{{banda.AnioSeparacion}}</td>
+      </tr>   
+    <!-- </div>     -->
+  </table>
+<br>
+<!-- 
+  <div style="font-size: 20px;"><button>Genero: {{banda.Genero.Descripcion}}</button></div>
+  <div style="font-size: 20px;"><button>Año creación: </button>{{banda.AnioCreacion}}</div>
+  <div style="font-size: 20px;" *ngIf="banda.AnioSeparacion > 0"><button>Año separación: </button>{{banda.AnioSeparacion}}</div> -->
+  
   <div *ngIf="banda.Integrantes.length > 0">
-    <div>Integrantes</div>
-    <div *ngFor="let integrante of banda.Integrantes">
+    <div><h1>Integrantes</h1></div>
+
+    <table id="integrantes">
+      <tr> <th> Id </th> <th> Nombre </th> <th> Fecha Nacimiento </th> <th>Foto</th></tr>        
+      <tr *ngFor="let integrante of banda.Integrantes">
+        <td>{{ integrante.Id }}</td>
+        <td>{{ integrante.Nombre }} {{integrante.Apellido}}</td>
+        <td>{{ integrante.FechaNacimiento }}</td>
+        <td> <img ng-src="data:image/JPEG;base64,{{ integrante.Foto }}"></td>
+      </tr>
+    </table>
+
+
+   <!--  <div *ngFor="let integrante of banda.Integrantes">
       Nombre: {{integrante.Nombre}} {{integrante.Apellido}}
-    </div>
+    </div> -->
   </div>
   <br />
-  <div>Reseñas</div>
+  <div><h1>Reseñas</h1></div>
   <div>
     <div><label>Comentario:</label></div>
-    <div><textarea #reseniaComentario rows="5"></textarea></div>
+    <div><textarea #reseniaComentario rows="5" style="width: 90%;"></textarea></div>
     <label>Puntuación:
-      <select #reseniaPuntuacion>
+      <select #reseniaPuntuacion style="width: 100px;">
         <option value="0">-</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -33,12 +64,14 @@
       Añadir
     </button>
   </div>
+  <br>
   <div *ngIf="banda.Resenias.length > 0">
-    <table>
+    <table id="resenias"> 
       <th>Puntuación</th>
       <th>Comentario</th>
       <th>Usuario</th>
       <th>Fecha</th>
+      <th>Eliminar</th>
       <tr *ngFor="let resenia of banda.Resenias">
         <td *ngIf="resenia.Puntuacion == 1">★</td>
         <td *ngIf="resenia.Puntuacion == 2">★★</td>
