@@ -9,5 +9,6 @@ export interface Banda {
     AnioCreacion: number,
     AnioSeparacion: number
     Resenias: ReseniaBanda[],
-    Integrantes: Integrante[]
+    Integrantes: Integrante[],
+    PromedioResenias: number
   }

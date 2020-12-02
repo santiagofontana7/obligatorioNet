@@ -35,6 +35,20 @@ export class DashboardComponent implements OnInit {
   private checkBandas(data: ResultadoOperacion) {
     if (!data.Error) {
       this.bandas = data.Objeto as Banda[];
+      this.bandas.sort(function (banda1, banda2) {
+        var retorno = 0;
+        if (banda1.PromedioResenias < banda2.PromedioResenias)
+          retorno = 1;
+        else if (banda1.PromedioResenias > banda2.PromedioResenias)
+          retorno = -1
+        else
+          retorno = 0;
+        return retorno;
+      });
+      this.bandas = this.bandas.slice(0, 4);
+
+
+
     }
     else {
       console.log(data.Mensaje);
