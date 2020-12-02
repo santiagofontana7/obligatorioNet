@@ -1,8 +1,7 @@
 <div *ngIf="banda">
 <br>
   <h1>{{banda.Nombre}}</h1>
-  <!-- <div><span>Id: </span>{{banda.Id}}</div> -->
-  <!-- <div style="font-size: 20px;"><span>Nombre: </span>{{banda.Nombre}}</div> -->
+  
 
   <table id=banda>
     <tr>
@@ -13,18 +12,13 @@
       <th style="width: 20%;">Año Creacion:</th>
       <td>{{banda.AnioCreacion}}</td>
     </tr> 
-    <!-- <div *ngIf="banda.AnioSeparacion > 0"> -->
       <tr *ngIf="banda.AnioSeparacion > 0">
         <th style="width: 20%;">Año Separacion:</th>
         <td>{{banda.AnioSeparacion}}</td>
       </tr>   
-    <!-- </div>     -->
   </table>
 <br>
-<!-- 
-  <div style="font-size: 20px;"><button>Genero: {{banda.Genero.Descripcion}}</button></div>
-  <div style="font-size: 20px;"><button>Año creación: </button>{{banda.AnioCreacion}}</div>
-  <div style="font-size: 20px;" *ngIf="banda.AnioSeparacion > 0"><button>Año separación: </button>{{banda.AnioSeparacion}}</div> -->
+
   
   <div *ngIf="banda.Integrantes.length > 0">
     <div><h1>Integrantes</h1></div>
@@ -40,9 +34,7 @@
     </table>
 
 
-   <!--  <div *ngFor="let integrante of banda.Integrantes">
-      Nombre: {{integrante.Nombre}} {{integrante.Apellido}}
-    </div> -->
+
   </div>
   <br />
   <div><h1>Reseñas</h1></div>
