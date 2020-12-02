@@ -10,7 +10,7 @@ export interface Cancion {
     Duracion: number;
     Anio: number,
     Data: Byte[],
-    Integrantes: Integrante[]
+    Cantante: Integrante
   }
 
 

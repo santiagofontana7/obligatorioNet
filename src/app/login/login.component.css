@@ -1,0 +1,31 @@
+button {
+    background-color: #4c8baf; 
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+ contains {
+    text-align: center;
+}
+
+div{
+    margin: auto;
+    margin-top: 10%;
+}
+
+input{
+    margin: auto;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.mat-card {
+background-color: #d6eaf7;
+}

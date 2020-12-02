@@ -7,9 +7,21 @@
     <br />
     <div *ngIf="album.Canciones.length > 0">
       <div>Canciones</div>
+      <table id="canciones">
+        <tr> <th> Id </th> <th> Nombre </th><th> Cantante </th>  <th> Duracion </th> </tr>        
+        <tr *ngFor="let cancion of album.Canciones">
+          <td>{{ cancion.Id }}</td>
+          <td>{{ cancion.Nombre }}</td>
+          <td>{{ cancion.Cantante.Nombre }} {{ cancion.Cantante.Apellido }}</td>
+          <td>{{ cancion.Duracion}} min</td>
+        </tr>
+      </table>
+<!-- 
       <div *ngFor="let cancion of album.Canciones">
-        Nombre: {{cancion.Nombre}} {{cancion.duracion}}
-      </div>
+        Nombre: {{cancion.Nombre}}
+        Duracion: {{cancion.duracion}}
+        cancion.
+      </div> -->
     </div>
     <br />    
     <button (click)="goBack()">Atras</button>
