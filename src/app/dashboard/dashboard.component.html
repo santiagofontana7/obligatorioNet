@@ -3,6 +3,7 @@
   <a *ngFor="let banda of bandas" class="col-1-4" routerLink="/detailBanda/{{banda.Nombre}}">
     <div class="module banda">
       <h4>{{banda.Nombre}}</h4>
+      <h5>{{banda.PromedioResenias}}</h5>
     </div>
   </a>
 </div>

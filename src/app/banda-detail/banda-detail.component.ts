@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import {BandaService} from '../services/banda.service';
+import { BandaService } from '../services/banda.service';
 import { Banda } from '../ValueObjects/banda';
 import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 import { ReseniaBandaService } from '../services/resenia-banda.service';
@@ -14,6 +14,9 @@ import { StorageService } from '../services/storage.service';
   styleUrls: ['./banda-detail.component.css']
 })
 export class BandaDetailComponent implements OnInit {
+
+  private mensajeError: string;
+  private mensajeSuccess: string;
 
   constructor(private route: ActivatedRoute,
     private bandaService: BandaService,
@@ -38,31 +41,39 @@ export class BandaDetailComponent implements OnInit {
   }
 
   add(comentario: string, puntuacion: string): void {
-    if (comentario.trim() != "" && puntuacion != "0") {
+    this.mensajeError = "";
+    this.mensajeSuccess = "";
+    if (comentario.trim() == "") {
+      this.mensajeError = "Debe ingresar un comentario";
+    }
+    else if (puntuacion == "0") {
+      this.mensajeError = "Debe seleccionar una puntuación";
+    }
+    else {
       console.log(this.banda);
       this.reseniaBandaService.guardarResenia(new ReseniaBandaGuardar(this.banda.Id, this.banda.Nombre, this.storageService.getCurrentUser().Id, +puntuacion, comentario)).subscribe(
-        data => { this.checkAccionResenia(data) },
-        error => console.log(error)
+        data => { this.checkAccionResenia(data, "Cambios guardados con éxito") },
+        error => this.mensajeError = error
       )
     }
-    else { console.log("error"); }
   }
 
-  private checkAccionResenia(data: ResultadoOperacion) {
+  private checkAccionResenia(data: ResultadoOperacion, mensaje : string) {
     if (!data.Error) {
       console.log(data);
       this.getBanda();
+      this.mensajeSuccess = mensaje;
 
     }
     else {
-      console.log(data.Mensaje);
+      this.mensajeError = data.Mensaje;
     }
   }
 
   delete(idResenia: number): void {
     console.log(idResenia);
     this.reseniaBandaService.eliminarResenia(idResenia).subscribe(
-      data => { this.checkAccionResenia(data) },
+      data => { this.checkAccionResenia(data, "Reseña eliminada con éxito") },
       error => console.log(error)
     )
   }
