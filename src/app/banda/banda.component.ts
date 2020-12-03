@@ -3,6 +3,7 @@ import { Banda } from '../ValueObjects/banda';
 import { BandaService } from '../services/banda.service';
 import { MessageService } from '../services/message.service';
 import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-banda',
@@ -12,7 +13,7 @@ import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 export class BandaComponent implements OnInit {
 
   bandas: Banda[];
-  constructor(private bandaService: BandaService) { }
+  constructor(private bandaService: BandaService, private location : Location) { }
 
   getBandas(): void {
     this.bandaService.getBandas().subscribe(data => { this.checkBandas(data) }, error => { console.log(error) });
@@ -30,5 +31,8 @@ export class BandaComponent implements OnInit {
       console.log(data.Mensaje);
     }
 
+  }
+  goBack(): void {
+    this.location.back();
   }
 }

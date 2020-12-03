@@ -4,6 +4,7 @@ import { BandaService } from '../services/banda.service';
 import { MessageService } from '../services/message.service';
 import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 import { AlbumService } from '../services/album.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-album',
@@ -14,7 +15,7 @@ export class AlbumComponent implements OnInit {
 
   albums: Album[];
 
-  constructor(private albumService: AlbumService) { }
+  constructor(private albumService: AlbumService, private location: Location) { }
 
   ngOnInit(): void {
     this.getAlbums();
@@ -33,6 +34,9 @@ export class AlbumComponent implements OnInit {
       console.log(data.Mensaje);
     }
 
+  }
+  goBack(): void {
+    this.location.back();
   }
 
 }

@@ -82,6 +82,10 @@ export class CancionDetailComponent implements OnInit {
     )
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
 
   @Input() cancion: Cancion;
 

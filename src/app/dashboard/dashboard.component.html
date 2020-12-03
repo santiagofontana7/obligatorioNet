@@ -3,7 +3,16 @@
   <a *ngFor="let banda of bandas" class="col-1-4" routerLink="/detailBanda/{{banda.Nombre}}">
     <div class="module banda">
       <h4>{{banda.Nombre}}</h4>
-      <h5>{{banda.PromedioResenias}}</h5>
+      <h5>{{banda.PromedioResenias.toFixed(2)}}</h5>
+    </div>
+  </a>
+</div>
+<h3>Top Canciones</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let cancion of canciones" class="col-1-4" routerLink="/detailCancion/{{cancion.Nombre}}">
+    <div class="module cancion">
+      <h4>{{cancion.Nombre}}</h4>
+      <h5>{{cancion.PromedioResenias.toFixed(2)}}</h5>
     </div>
   </a>
 </div>

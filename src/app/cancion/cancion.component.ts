@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { CancionService } from '../services/cancion.service';
 import { Cancion } from '../ValueObjects/cancion';
@@ -12,7 +13,7 @@ export class CancionComponent implements OnInit {
 
   canciones: Cancion[];
 
-  constructor(private cancionService: CancionService) { }
+  constructor(private cancionService: CancionService, private location: Location) { }
 
   ngOnInit(): void {
     this.getCanciones();
@@ -31,6 +32,10 @@ export class CancionComponent implements OnInit {
       console.log(data.Mensaje);
     }
 
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

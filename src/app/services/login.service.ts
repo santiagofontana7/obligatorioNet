@@ -14,9 +14,14 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   private loginUrl = 'https://localhost:44323/api/Usuario/Login/';
+  private registerUrl = 'https://localhost:44323/api/Usuario/Post/';
 
   login(loginObj: LoginObject): Observable<ResultadoOperacion> {
     return this.http.post<ResultadoOperacion>(this.loginUrl, loginObj);
+  }
+
+  register(registerObj: Usuario): Observable<ResultadoOperacion> {
+    return this.http.post<ResultadoOperacion>(this.registerUrl, registerObj);
   }
 
 

@@ -1,0 +1,26 @@
+<div class="registro-box" style="text-align: center; width: 50%;">
+    <mat-card class="aligner-center-item">
+        <mat-card-title style="color: #4c8baf;">
+            Registro
+        </mat-card-title>
+        <br>
+        <mat-card-content>
+            <form id="registro-form" #lForm="ngForm" [formGroup]="registroForm" (ngSubmit)="submitregistro()" novalidate
+                style="text-align: center">
+
+                <input matInput type="text" formControlName="Nombre" placeholder="Nombre" />
+                <br>
+                <input matInput type="text" formControlName="UserName" placeholder="Username" />
+
+                <br>
+                <input matInput type="password" formControlName="Password" placeholder="Password" />
+
+            </form>
+        </mat-card-content>
+        <mat-card-actions style="text-align: center;">
+            <button mat-raised-button type="submit" form="registro-form"> Registrarse</button>
+        </mat-card-actions>
+    </mat-card>
+    <label style="color: red;" *ngIf="mensajeError">{{mensajeError}}</label>
+    <label style="color: green;" *ngIf="mensajeSuccess">{{mensajeSuccess}}</label>
+</div>

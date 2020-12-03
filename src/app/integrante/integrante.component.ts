@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IntegranteService } from '../services/integrante.service';
 import { Integrante } from '../ValueObjects/integrante';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-integrante',
@@ -10,7 +11,7 @@ import { Integrante } from '../ValueObjects/integrante';
 export class IntegranteComponent implements OnInit {
 
   integrantes: Integrante[];
-  constructor(private integranteService: IntegranteService) { }
+  constructor(private integranteService: IntegranteService, private location: Location) { }
 
 
   getIntegrantes(): void {
@@ -19,6 +20,10 @@ export class IntegranteComponent implements OnInit {
 
   ngOnInit(): void {
     this.getIntegrantes();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 

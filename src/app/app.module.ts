@@ -8,7 +8,6 @@ import { BandaComponent } from './banda/banda.component';
 
 import { FormsModule } from '@angular/forms';
 import { BandaDetailComponent } from './banda-detail/banda-detail.component';
-import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatInputModule } from "@angular/material/input";
 import { MatTableModule } from "@angular/material/table";
@@ -26,13 +25,13 @@ import { AlbumComponent } from './album/album.component';
 import { AlbumDetailComponent } from './album-detail/album-detail.component';
 import { CancionComponent } from './cancion/cancion.component';
 import { CancionDetailComponent } from './cancion-detail/cancion-detail.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BandaComponent,
     BandaDetailComponent,
-    MessagesComponent,
     DashboardComponent,
     LoginComponent,
     IntegranteComponent,
@@ -40,7 +39,8 @@ import { CancionDetailComponent } from './cancion-detail/cancion-detail.componen
     AlbumComponent,
     AlbumDetailComponent,
     CancionComponent,
-    CancionDetailComponent
+    CancionDetailComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

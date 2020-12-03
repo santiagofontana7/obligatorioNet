@@ -10,6 +10,7 @@ import {AlbumComponent} from './album/album.component';
 import {AlbumDetailComponent} from './album-detail/album-detail.component';
 import {CancionComponent} from './cancion/cancion.component';
 import {CancionDetailComponent} from './cancion-detail/cancion-detail.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthorizatedGuard] },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'detailAlbums/:Nombre', component: AlbumDetailComponent , canActivate:[AuthorizatedGuard] },
   { path: 'canciones', component: CancionComponent , canActivate:[AuthorizatedGuard] },
   { path: 'detailCancion/:Nombre', component: CancionDetailComponent , canActivate:[AuthorizatedGuard] },
+  { path: 'registro', component: RegistroComponent },
 
 ];
 

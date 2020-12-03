@@ -78,6 +78,10 @@ export class BandaDetailComponent implements OnInit {
     )
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
   @Input() banda: Banda;
 
 }

@@ -37,6 +37,9 @@ export class AlbumDetailComponent implements OnInit {
       this.location.back();
     }
   }
+  goBack(): void {
+    this.location.back();
+  }
 
   @Input() album: Album;
 

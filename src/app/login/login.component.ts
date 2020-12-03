@@ -19,7 +19,6 @@ import { ResultadoOperacion } from '../ValueObjects/resultadoOperacion';
 export class LoginComponent implements OnInit {
 
   public loginForm: FormGroup;
-  public submitted: Boolean = false;
   public mensajeError: string;
   
   constructor(private formBuilder: FormBuilder,
@@ -36,7 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   public submitLogin(): void {
-    this.submitted = true;
     var user = this.loginForm.get("UserName").value;
     var pass = this.loginForm.get("Password").value;
     if (user == "") {
