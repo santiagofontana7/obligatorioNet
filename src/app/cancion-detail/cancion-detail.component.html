@@ -1,0 +1,78 @@
+<div *ngIf="cancion">
+    <br>
+      <h1>{{cancion.Nombre}}</h1>
+           
+      <table id=cancion>
+        <tr>
+          <th style="width: 20%;">Nombre:</th>
+          <td>{{cancion.Nombre}}</td>
+        </tr> 
+        <tr>
+          <th style="width: 20%;">Genero:</th>
+          <td>{{cancion.Genero.Descripcion}}</td>
+        </tr>
+        <tr>
+          <th style="width: 20%;">Año:</th>
+          <td>{{cancion.Anio}}</td>
+        </tr>
+        <tr>
+            <th style="width: 20%;">Cantante:</th>
+            <td>{{cancion.Cantante.Nombre}} {{cancion.Cantante.Apellido}}</td>
+          </tr>
+      </table>
+    <br>
+    
+
+        <br />
+        <div><h1>Reseñas</h1></div>
+        <div>
+        <div><label>Comentario:</label></div>
+        <div><textarea #reseniaComentario rows="5" style="width: 90%;"></textarea></div>
+        <label>Puntuación:
+            <select #reseniaPuntuacion style="width: 110px; height: 30px;">
+            <option value="0">Seleccionar...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+        </label>
+        <br />
+        <button (click)="add(reseniaComentario.value, reseniaPuntuacion.value);">
+            Añadir Reseña
+        </button>        
+        </div>
+
+        <br>
+
+        <div>
+        <label style="color: red; width: 100%;" *ngIf="mensajeError">{{mensajeError}}</label>
+        <label style="color: green;width: 100%;" *ngIf="mensajeSuccess">{{mensajeSuccess}}</label>
+        </div>
+        <div *ngIf="cancion.Resenias.length > 0">
+        <table id="resenias"> 
+            <th>Puntuación</th>
+            <th>Comentario</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Eliminar</th>
+            <tr *ngFor="let resenia of cancion.Resenias">
+            <td *ngIf="resenia.Puntuacion == 1">★</td>
+            <td *ngIf="resenia.Puntuacion == 2">★★</td>
+            <td *ngIf="resenia.Puntuacion == 3">★★★</td>
+            <td *ngIf="resenia.Puntuacion == 4">★★★★</td>
+            <td *ngIf="resenia.Puntuacion == 5">★★★★★</td>
+            <td>{{resenia.Comentario}}</td>
+            <td>{{resenia.Usuario.UserName}}</td>
+            <td>{{resenia.Fecha}}</td>
+            <td><span class="fake-link" *ngIf="storageService.getCurrentUser().Id == resenia.Usuario.Id"
+                (click)="delete(resenia.Id)">Eliminar</span></td>
+            </tr>
+        </table>
+        </div>
+    
+       <br />    
+      <button routerLink="/canciones">Atras</button>
+
+    </div>

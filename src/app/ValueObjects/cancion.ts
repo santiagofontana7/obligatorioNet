@@ -11,6 +11,7 @@ export interface Cancion {
     Anio: number,
     Data: Byte[],
     Cantante: Integrante
+    Resenias: ReseniaBanda[],
   }
 
 

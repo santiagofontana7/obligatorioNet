@@ -35,28 +35,7 @@ label {
     cursor: pointer;
 }
 
-#integrantes {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 90%;
-}
 
-#integrantes td, #integrantes th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#integrantes tr:nth-child(even){background-color: #f2f2f2;}
-
-#integrantes tr:hover {background-color: #ddd;}
-
-#integrantes th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4c8baf;
-  color: white;
-}
 
 
 #resenias {
@@ -81,22 +60,22 @@ label {
   background-color: #4c8baf;
   color: white;
 }
-  #banda {
+  #cancion {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 50%;
   }
   
-  #banda td, #banda th {
+  #cancion td, #cancion th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  #banda tr:nth-child(even){background-color: #f2f2f2;}
+  #cancion tr:nth-child(even){background-color: #f2f2f2;}
   
-  #banda tr:hover {background-color: #ddd;}
+  #cancion tr:hover {background-color: #ddd;}
   
-  #banda th {
+  #cancion th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

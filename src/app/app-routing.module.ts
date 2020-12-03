@@ -8,7 +8,8 @@ import{AuthorizatedGuard} from "./guards/auth-guard.service"
 import {IntegranteComponent} from './integrante/integrante.component';
 import {AlbumComponent} from './album/album.component';
 import {AlbumDetailComponent} from './album-detail/album-detail.component';
-
+import {CancionComponent} from './cancion/cancion.component';
+import {CancionDetailComponent} from './cancion-detail/cancion-detail.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate:[AuthorizatedGuard] },
@@ -19,9 +20,11 @@ const routes: Routes = [
   { path: 'integrantes', component: IntegranteComponent , canActivate:[AuthorizatedGuard] },
   { path: 'albums', component: AlbumComponent , canActivate:[AuthorizatedGuard] },
   { path: 'detailAlbums/:Nombre', component: AlbumDetailComponent , canActivate:[AuthorizatedGuard] },
+  { path: 'canciones', component: CancionComponent , canActivate:[AuthorizatedGuard] },
+  { path: 'detailCancion/:Nombre', component: CancionDetailComponent , canActivate:[AuthorizatedGuard] },
 
-  
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

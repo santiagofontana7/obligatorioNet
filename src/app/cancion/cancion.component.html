@@ -1,0 +1,13 @@
+<br>
+<h1>Canciones</h1>
+
+<ul class="canciones">
+    <li *ngFor="let cancion of canciones">
+        <a routerLink="/detailCancion/{{cancion.Nombre}}">
+         <span class="badge">{{cancion.Id}}</span> {{cancion.Nombre}}
+        </a>
+    </li>
+</ul>
+
+
+<button routerLink="/dashboard">Atras</button>
