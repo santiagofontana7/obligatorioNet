@@ -3,12 +3,11 @@
 <ul class="integrantes">
     
     <table id="integrantes">
-        <tr> <th> Id </th> <th> Nombre </th> <th> Fecha Nacimiento </th> <th>Foto</th></tr>        
+        <tr> <th> Id </th> <th> Nombre </th> <th> Fecha Nacimiento </th> </tr>        
         <tr *ngFor="let integrante of integrantes">
           <td>{{ integrante.Id }}</td>
           <td>{{ integrante.Nombre }} {{integrante.Apellido}}</td>
-          <td>{{ integrante.FechaNacimiento }}</td>
-          <td>   </td>
+          <td>{{ integrante.FechaNacimiento | date: 'dd/MM/yyyy'}}</td>
         </tr>
       </table>
 </ul>

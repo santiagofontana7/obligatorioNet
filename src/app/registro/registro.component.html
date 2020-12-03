@@ -8,12 +8,12 @@
             <form id="registro-form" #lForm="ngForm" [formGroup]="registroForm" (ngSubmit)="submitregistro()" novalidate
                 style="text-align: center">
 
-                <input matInput type="text" formControlName="Nombre" placeholder="Nombre" />
+                <input matInput type="text" style="width: 150px;" formControlName="Nombre" placeholder="Nombre" />
                 <br>
-                <input matInput type="text" formControlName="UserName" placeholder="Username" />
+                <input matInput type="text" style="width: 150px;" formControlName="UserName" placeholder="Username" />
 
                 <br>
-                <input matInput type="password" formControlName="Password" placeholder="Password" />
+                <input matInput type="password" style="width: 150px;" formControlName="Password" placeholder="Password" />
 
             </form>
         </mat-card-content>

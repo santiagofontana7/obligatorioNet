@@ -24,12 +24,11 @@
     <div><h1>Integrantes</h1></div>
 
     <table id="integrantes">
-      <tr> <th> Id </th> <th> Nombre </th> <th> Fecha Nacimiento </th> <th>Foto</th></tr>        
+      <tr> <th> Id </th> <th> Nombre </th> <th> Fecha Nacimiento </th> </tr>        
       <tr *ngFor="let integrante of banda.Integrantes">
         <td>{{ integrante.Id }}</td>
         <td>{{ integrante.Nombre }} {{integrante.Apellido}}</td>
-        <td>{{ integrante.FechaNacimiento }}</td>
-        <td> <img ng-src="data:image/JPEG;base64,{{ integrante.Foto }}"></td>
+        <td>{{ integrante.FechaNacimiento | date: 'dd/MM/yyyy'}}</td>
       </tr>
     </table>
 
@@ -77,7 +76,7 @@
         <td *ngIf="resenia.Puntuacion == 5">★★★★★</td>
         <td>{{resenia.Comentario}}</td>
         <td>{{resenia.Usuario.UserName}}</td>
-        <td>{{resenia.Fecha}}</td>
+        <td>{{resenia.Fecha | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
         <td><span class="fake-link" *ngIf="storageService.getCurrentUser().Id == resenia.Usuario.Id"
             (click)="delete(resenia.Id)">Eliminar</span></td>
       </tr>

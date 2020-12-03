@@ -7,17 +7,18 @@
       <mat-card-content>
         <form id="login-form" #lForm="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate style="text-align: center">
 
-            <input matInput type="text" formControlName="UserName" placeholder="Username"/>
+            <input matInput type="text" style="width: 150px;" formControlName="UserName" placeholder="Username"/>
 
           <br>          
 
-            <input matInput type="password" formControlName="Password" placeholder="Password"/>
+            <input matInput type="password" style="width: 150px;" formControlName="Password" placeholder="Password"/>
 
         </form>
       </mat-card-content>
       <mat-card-actions style="text-align: center;">
         <button mat-raised-button type="submit" form="login-form"> Iniciar sesión</button>
         <br/>
+        <br>
         <a routerLink="/registro">Registrarse</a>
       </mat-card-actions>
     </mat-card>
