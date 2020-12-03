@@ -21,4 +21,5 @@ export class IntegranteComponent implements OnInit {
     this.getIntegrantes();
   }
 
+
 }

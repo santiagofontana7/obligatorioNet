@@ -32,7 +32,7 @@
     font-size: small;
     color: white;
     padding: 0.8em 0.7em 0 0.7em;
-    background-color:#405061;
+    background-color:#4c8baf;
     line-height: 1em;
     position: relative;
     left: -1px;
@@ -40,4 +40,15 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+  }
+
+  button {
+    background-color: #4c8baf; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
   }

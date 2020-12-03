@@ -42,8 +42,8 @@
     <div><label>Comentario:</label></div>
     <div><textarea #reseniaComentario rows="5" style="width: 90%;"></textarea></div>
     <label>Puntuación:
-      <select #reseniaPuntuacion style="width: 100px;">
-        <option value="0">-</option>
+      <select #reseniaPuntuacion style="width: 110px; height: 30px;">
+        <option value="0">Seleccionar...</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -53,9 +53,11 @@
     </label>
     <br />
     <button (click)="add(reseniaComentario.value, reseniaPuntuacion.value);">
-      Añadir
+      Añadir Reseña
     </button>
+    
   </div>
+  <br>
   <div>
     <label style="color: red; width: 100%;" *ngIf="mensajeError">{{mensajeError}}</label>
     <label style="color: green;width: 100%;" *ngIf="mensajeSuccess">{{mensajeSuccess}}</label>
@@ -82,5 +84,7 @@
     </table>
   </div>
 
-  <button (click)="goBack()">Atras</button>
+  <button routerLink="/bandas">Atras</button>
+
+  
 </div>

@@ -1,4 +1,5 @@
-<h2>Cantantes</h2>
+<br>
+<h1>Cantantes</h1>
 <ul class="integrantes">
     
     <table id="integrantes">
@@ -7,7 +8,9 @@
           <td>{{ integrante.Id }}</td>
           <td>{{ integrante.Nombre }} {{integrante.Apellido}}</td>
           <td>{{ integrante.FechaNacimiento }}</td>
-          <td> <img ng-src="data:image/JPEG;base64,{{ integrante.Foto }}"></td>
+          <td>   </td>
         </tr>
       </table>
 </ul>
+<br>
+<button routerLink="/dashboard">Atras</button>

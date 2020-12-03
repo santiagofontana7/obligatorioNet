@@ -1,8 +1,10 @@
-<h2>Bandas</h2>
+<br>
+<h1>Bandas</h1>
 <ul class="bandas">
     <li *ngFor="let banda of bandas">
         <a routerLink="/detailBanda/{{banda.Nombre}}">
-            <span class="badge">{{banda.Id}}</span> {{banda.Nombre}}
+            <span class="badge" >{{banda.Id}}</span> {{banda.Nombre}}
         </a>
     </li>
 </ul>
+<button routerLink="/dashboard">Atras</button>
