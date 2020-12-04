@@ -76,7 +76,7 @@
         <td *ngIf="resenia.Puntuacion == 5">★★★★★</td>
         <td>{{resenia.Comentario}}</td>
         <td>{{resenia.Usuario.UserName}}</td>
-        <td>{{resenia.Fecha | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
+        <td>{{resenia.Fecha | date: 'dd/MM/yyyy'}}</td>
         <td><span class="fake-link" *ngIf="storageService.getCurrentUser().Id == resenia.Usuario.Id"
             (click)="delete(resenia.Id)">Eliminar</span></td>
       </tr>
