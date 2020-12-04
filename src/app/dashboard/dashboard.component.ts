@@ -72,7 +72,7 @@ export class DashboardComponent implements OnInit {
           retorno = 0;
         return retorno;
       });
-      this.bandas = this.bandas.slice(0, 4);
+      this.canciones = this.canciones.slice(0, 4);
     }
     else {
       console.log(data.Mensaje);
